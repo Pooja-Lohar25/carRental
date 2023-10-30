@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="auth/auth.css">
+    <link rel="stylesheet" href="auth/forms.css">
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
     <title>Car Rental System</title>
@@ -25,7 +25,7 @@
                 </div>
                 <button class ="lg-btn"type="submit">Login</button>
             </form>
-            <p> New User? <a href="#" onclick="displaypopup()">Signup</a> </p>
+            <p> New User? <a href="#" onclick="displaypopup()">Signup</a></p>
         </div>
         <div class="pop-up" id="pop-up">
             <div class="back"><a href="#" onclick = "displaypopup()" ><h4><p>X</p></h4></a></div>

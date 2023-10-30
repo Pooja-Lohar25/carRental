@@ -5,7 +5,7 @@ include('../navbar.php');
 
 <head>
     <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="forms.css">
 </head>
 <body>
     <div class = "app-body">

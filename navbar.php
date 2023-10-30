@@ -1,9 +1,10 @@
-
+<?php
+    $isLogin=true
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Car Rental</title>
 </head>
@@ -11,7 +12,11 @@
     <nav class="navbar">
         <ul class="navbar-list">
             <li class="navbar-item"><a href="/carRental/index.php">Home</a></li>
-            <li class="navbar-item"><a href="/carRental/cars/cars.php">Available Cars</a></li>
+            <li class="navbar-item"><a href="/carRental/cars/cars.php">Cars</a></li>
+            <?php if ($isLogin): ?>
+                <li class="navbar-item"><a href="/carRental/cars/add-car.php">Add</a></li>
+            <?php endif; ?>
+
         </ul>
     </nav>
 </body>

@@ -1,5 +1,7 @@
 <?php 
 include('../navbar.php');
+$islogin = true;
+$isAgency = true;
 ?>
 
 <head>
@@ -38,7 +40,11 @@ include('../navbar.php');
                     <div class="car-img"><img src="car.png" alt="car"></div>
                 </div>
                     <div class="details-grp">
-                        <a class="rent-car-btn" href ="index.php">Rent Now</a>
+                    <?php if ($isAgency): ?>
+                        <a href="edit-car.php"><button class="edit-car-btn">Edit Details</button></a>
+                    <?php else: ?>
+                        <a href="rent-car.php"><button class="rent-car-btn" >Rent Now</button></a>
+                    <?php endif; ?>
                     </div>
                 
             </div>
@@ -55,7 +61,11 @@ include('../navbar.php');
                     <div class="car-img"><img src="car.png" alt="car"></div>
                 </div>
                     <div class="details-grp">
-                        <a class="rent-car-btn" href ="index.php">Rent Now</a>
+                    <?php if ($isAgency): ?>
+                        <a href="edit-car.php"><button class="edit-car-btn">Edit Details</button></a>
+                    <?php else: ?>
+                        <a href="rent-car.php"><button class="rent-car-btn" >Rent Now</button></a>
+                    <?php endif; ?>
                     </div>
                 
             </div>
@@ -72,7 +82,11 @@ include('../navbar.php');
                     <div class="car-img"><img src="car.png" alt="car"></div>
                 </div>
                     <div class="details-grp">
-                        <a class="rent-car-btn" href ="index.php">Rent Now</a>
+                    <?php if ($isAgency): ?>
+                        <a href="edit-car.php"><button class="edit-car-btn">Edit Details</button></a>
+                    <?php else: ?>
+                        <a href="rent-car.php"><button class="rent-car-btn" >Rent Now</button></a>
+                    <?php endif; ?>
                     </div>
                 
             </div>
@@ -89,7 +103,11 @@ include('../navbar.php');
                     <div class="car-img"><img src="car.png" alt="car"></div>
                 </div>
                     <div class="details-grp">
-                        <a class="rent-car-btn" href ="index.php">Rent Now</a>
+                    <?php if ($isAgency): ?>
+                        <a href="edit-car.php"><button class="edit-car-btn">Edit Details</button></a>
+                    <?php else: ?>
+                        <a href="rent-car.php"><button class="rent-car-btn" >Rent Now</button></a>
+                    <?php endif; ?>
                     </div>
                 
             </div>
@@ -106,7 +124,11 @@ include('../navbar.php');
                     <div class="car-img"><img src="car.png" alt="car"></div>
                 </div>
                     <div class="details-grp">
-                        <a class="rent-car-btn" href ="index.php">Rent Now</a>
+                    <?php if ($isAgency): ?>
+                        <a href="edit-car.php"><button class="edit-car-btn">Edit Details</button></a>
+                    <?php else: ?>
+                        <a href="rent-car.php"><button class="rent-car-btn" >Rent Now</button></a>
+                    <?php endif; ?>
                     </div>
                 
             </div>
@@ -123,7 +145,11 @@ include('../navbar.php');
                     <div class="car-img"><img src="car.png" alt="car"></div>
                 </div>
                     <div class="details-grp">
-                        <a class="rent-car-btn" href ="index.php">Rent Now</a>
+                    <?php if ($isAgency): ?>
+                        <a href="edit-car.php"><button class="edit-car-btn">Edit Details</button></a>
+                    <?php else: ?>
+                        <a href="rent-car.php"><button class="rent-car-btn" >Rent Now</button></a>
+                    <?php endif; ?>
                     </div>
                 
             </div>
