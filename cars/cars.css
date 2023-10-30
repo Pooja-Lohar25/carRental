@@ -1,0 +1,122 @@
+
+/** filter styling */
+.filter-car{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: end;
+    margin: 50px 100px ;
+}
+
+.filter-by{
+    margin: 0 5px;
+}
+
+.filter-by label {
+    display: block;
+    margin: 5px 0;
+    color: #333;
+    float: left;
+    
+}
+
+.filter-by input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.filter-btn{
+    background-color: #ff6600;
+    width: 8%;
+    border: solid 1px  #ff6600;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+}
+
+/** available cars styling*/
+
+.cars{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.cars .cars-container{
+    width: 100%;
+    display: flex;
+    padding: 0 100px;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.cars .car-details{
+    width: 20%;
+    margin: 5px 5px;
+}
+
+.cars img{
+    width: 50%;
+}
+
+
+.rent{
+    color: #ff6600;
+    width: 150%;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+
+.rent-car-btn{
+    background-color: #ff6600;
+    color: white;
+    padding: 8px;
+    width: 150%;
+    font-size: 15px;
+    margin-top: 10px;
+    border: solid 1px  #ff6600;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.rent-car-btn:hover{
+    cursor:pointer;
+    background-color: #f6853b;
+}
+
+/** booked cars styling*/
+
+.booked-cars{
+    display: flex;
+    justify-content: center;
+}
+
+.details-grp{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.cars-container{
+    width: 80%;
+}
+.car-details{
+    background-color: white;
+    width: 100%;
+    margin: 20px;
+    border: solid 1px grey;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.details-grp label{
+    color: brown;
+}
+.details-grp .car-img{
+    text-align: right;
+}

@@ -11,7 +11,7 @@
     <nav class="navbar">
         <ul class="navbar-list">
             <li class="navbar-item"><a href="/carRental/index.php">Home</a></li>
-            <li class="navbar-item"><a href="#">Available Cars</a></li>
+            <li class="navbar-item"><a href="/carRental/cars/cars.php">Available Cars</a></li>
         </ul>
     </nav>
 </body>
