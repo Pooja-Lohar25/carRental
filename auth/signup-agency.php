@@ -12,7 +12,7 @@ include('../navbar.php');
     <div class = "app-body">
     <div class="sign-container">
             <h2>Signup</h2>
-            <form action="signup.php" method="post">
+            <form action="../controllers/addagency.php" method="post">
                 <div class="input-group">
                     <label for="Agency">Agency Name:</label>
                     <input type="text" id="username" name="username" required>

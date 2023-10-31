@@ -14,7 +14,7 @@
 
         <div class="login-container">
             <h2>Login</h2>
-            <form action="auth/login.php" method="post">
+            <form action="../controllers/authuser.php" method="post">
                 <div class="input-group">
                     <label for="email">Email:</label>
                     <input type="text" id="email" name="email" required>

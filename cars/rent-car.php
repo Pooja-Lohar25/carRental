@@ -11,7 +11,7 @@ include('../navbar.php');
     <div class = "app-body">
     <div class="new-car-container">
             <h2>Rent this Car</h2>
-            <form action="add-new-car.php" method="post">
+            <form action="../controllers/rentcar.php" method="post">
                 <div class="input-group">
                     <label for="agency">Agency Name:</label>
                     <input type="text" id="agency" name="agency" disabled>

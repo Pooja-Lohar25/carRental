@@ -1,6 +1,6 @@
 <?php
     $isLogin = false;
-    $isAgency = false;
+    $isAgency = true;
 ?>
 <!DOCTYPE html>
 <html lang="en">
