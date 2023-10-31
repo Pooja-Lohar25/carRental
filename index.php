@@ -2,39 +2,23 @@
 <?php 
 
 $cars = [];
-include('navbar.php');
 include('controllers/getcars.php');
-
+include('navbar.php');
 ?>
 
 <head>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="cars/cars.css">
 </head>
-<body>
-    <div class="filter-car">
-        <div class="filter-by">
-        <label for="capacity-filter">Seating Capacity</label>
-        <input type="number" id="capacity" name="capacity" placeholder = "ex:5">
-        </div>  
-        <div class="filter-by">
-        <label for="price-filter">Rent amount upto</label>
-        <input type="number" id="price" name="price" placeholder = "ex:4000">
-        </div>  
-        <div class="filter-by">
-        <label for="model-filter">Vehicle Model</label>
-        <input type="text" id="model" name="model" placeholder = "ex:Toyota">
-        </div>
-        <button class="filter-btn"> Filter </button>     
-    </div>
-
-    
+<body>    
     <div class="cars">
 
         <div class="cars-container">
             
             <?php
             foreach($cars as $car){
+                $editURL = "cars/edit-car.php?number=" . $car['number'];
+                $rentURL = "cars/rent-car.php?number=" . $car['number'];
                 ?>
                 <div class="car-details">
                 <div class="details-grp" >
@@ -54,9 +38,9 @@ include('controllers/getcars.php');
                 </div>
                 <div class="details-grp">
                 <?php if ($isAgency && $isLogin): ?>
-                    <a href="cars/edit-car.php"><button class="edit-car-btn">Edit Details</button></a>
+                    <a href="<?= $editURL ?>"><button class="edit-car-btn">Edit Details</button></a>
                 <?php elseif(!$isAgency && $isLogin): ?>
-                    <a href="cars/rent-car.php"><button class="rent-car-btn" >Rent Now</button></a>
+                    <a href="<?= $rentURL ?>"><button class="rent-car-btn" >Rent Now</button></a>
                 <?php else: ?>
                     <a href="auth/login_.php"><button class="rent-car-btn" >Rent Now</button></a>
                 <?php endif; ?>
@@ -68,4 +52,5 @@ include('controllers/getcars.php');
             
         </div>
     </div>
+
 </body>

@@ -13,12 +13,6 @@ $agencyid = $_SESSION['agencyid'];
 if($conn)
 {
 
-    // if(mysqli_num_rows($res)>0)
-    // {
-    //   $_SESSION['error'] = "Email already used";
-    //   header("location: ../auth/signup-cust.php");
-    //   exit();
-    // }
 
     $query ="INSERT INTO cars(`model`,`number`, `capacity`,`agencyid`,`rent`) VALUES ('$model','$number','$capacity','$agencyid','$rent')";
     if(mysqli_query($conn,$query)){ 
