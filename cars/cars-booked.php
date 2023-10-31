@@ -1,8 +1,18 @@
 <?php
+include('../controllers/getcars.php');
+
+$allcars = [];
+while ($row = mysqli_fetch_assoc($cars)) {
+    $allcars[] = $row;
+}
+$bookedcars = [];
+$bookedcars = array_filter($allcars, function ($car) {
+    return $car['custid'] !== null;
+});
+if(count($bookedcars) == 0) {
+    $_SESSION['msg'] = "No cars booked";
+} 
 include('../navbar.php');
-include('../controllers/dbconnect.php');
-
-
 ?>
 
 <head>
@@ -14,26 +24,9 @@ include('../controllers/dbconnect.php');
     <div class="booked-cars">
         <div class="cars-container">
             <?php
-            $cars = [
-                [
-                    'model' => 'Car Model 1',
-                    'number' => 'AB 1234',
-                    'capacity' => 5,
-                    'rent' => 1000,
-                    'booked_by' => 'Ajay Verma',
-                ],
-                [
-                    'model' => 'Car Model 2',
-                    'number' => 'CD 5678',
-                    'capacity' => 4,
-                    'rent' => 800,
-                    'booked_by' => 'Agency XYZ',
-                ],
-                // Add more cars as needed
-            ];
 
             // Loop through the car data and generate HTML for each car
-            foreach ($cars as $car) {
+            foreach ($bookedcars as $car) {
                 ?>
                 <div class="car-details">
                     <div class="details-grp">
@@ -55,10 +48,10 @@ include('../controllers/dbconnect.php');
                     <div class="details-grp">
                         <?php if ($isAgency): ?>
                             <label for="booked">Booked by:</label>
-                            <div><?= $car['booked_by'] ?></div>
+                            <div><?= $car['custid'] ?></div>
                         <?php else: ?>
                             <label for="booked">Booked from:</label>
-                            <div><?= $car['booked_by'] ?></div>
+                            <div><?= $car['agencyid'] ?></div>
                         <?php endif ?>
                     </div>
                 </div>

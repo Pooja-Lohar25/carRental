@@ -11,5 +11,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
 
 ?>

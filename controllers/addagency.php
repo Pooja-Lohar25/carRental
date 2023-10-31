@@ -1,6 +1,6 @@
 <?php
 include('dbconnect.php');
-session_start();
+
 $name = $_POST['username'];
 $contact = $_POST['contact'];
 $email = $_POST['mail'];

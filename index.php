@@ -1,6 +1,8 @@
 
 <?php 
 include('navbar.php');
+include('controllers/getcars.php');
+
 ?>
 
 <head>
@@ -28,19 +30,23 @@ include('navbar.php');
     <div class="cars">
 
         <div class="cars-container">
-        <div class="car-details">
+            
+            <?php
+            foreach($cars as $car){
+                ?>
+                <div class="car-details">
                 <div class="details-grp" >
                     <div>Agency name</div>
                     <div style="font-size:12px"><p>Call: 9372578458<p></div>
                 </div>
                 <div class="details-grp">
-                    <div>Toyota Camry</div>
-                    <div>9876 XYZ</div>
+                    <div><?= $car['model'] ?></div>
+                    <div><?= $car['number'] ?></div>
                 </div>
                 <div class="details-grp">
                     <div class="cap-rent">
-                        <div>5 Adults</div>
-                        <div class="rent">Rs 5000/day</div>
+                        <div class="cap"><?= $car['capacity']?> Adults</div>
+                        <div class="rent"><?= $car['rent'] ?>/Day</div>
                     </div>
                     <div class="car-img"><img src="cars/car.png" alt="car"></div>
                 </div>
@@ -54,6 +60,9 @@ include('navbar.php');
                 <?php endif; ?>
                 </div>
             </div>
+            <?php
+            }
+            ?>
             
         </div>
     </div>

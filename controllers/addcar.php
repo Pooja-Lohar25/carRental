@@ -1,6 +1,6 @@
 <?php
 include('dbconnect.php');
-session_start();
+
 
 
 $model = $_POST['model'];
