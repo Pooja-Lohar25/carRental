@@ -51,7 +51,7 @@ include('../navbar.php');
                             <div><?= $car['custid'] ?></div>
                         <?php else: ?>
                             <label for="booked">Booked from:</label>
-                            <div><?= $car['agencyid'] ?></div>
+                            <div><?= $car['agencyname'] ?></div>
                         <?php endif ?>
                     </div>
                 </div>

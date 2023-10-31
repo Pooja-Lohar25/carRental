@@ -1,5 +1,21 @@
 
 <?php 
+
+$cars = [];
+include('../controllers/getcars.php');
+
+$allcars = [];
+while ($row = mysqli_fetch_assoc($cars)) {
+    $allcars[] = $row;
+}
+
+$vehicleNumber = $_GET['number'];
+
+$car = array_filter($allcars, function ($car) use ($vehicleNumber) {
+    return $car['number'] == $vehicleNumber;
+});
+$car = reset($car); //pointer reaches to first elem
+
 include('../navbar.php');
 ?>
 
@@ -14,23 +30,23 @@ include('../navbar.php');
             <form action="../controllers/rentcar.php" method="post">
                 <div class="input-group">
                     <label for="agency">Agency Name:</label>
-                    <input type="text" id="agency" name="agency"  readonly>
+                    <input type="text" id="agency" name="agency" value= <?=$vehicleNumber?> readonly>
                 </div>
                 <div class="input-group">
                     <label for="Car model">Vehicle Model:</label>
-                    <input type="text" id="model" name="model" readonly>
+                    <input type="text" id="model" name="model" value= <?=$car['model']?> readonly>
                 </div>
                 <div class="input-group">
                     <label for="number">Vehicle Number:</label>
-                    <input type="text" id="number" name="number" readonly>
+                    <input type="text" id="number" name="number" value= <?=$vehicleNumber?> readonly>
                 </div>
                 <div class="input-group">
                     <label for="capacity">Seating Capacity:</label>
-                    <input type="number" id="capacity" name="capacity" readonly>
+                    <input type="number" id="capacity" name="capacity" value= <?=$car['capacity']?> readonly>
                 </div>
                 <div class="input-group">
                     <label for="rent">Rent per Day:</label>
-                    <input type="number" id="rent" name="rent" readonly>
+                    <input type="number" id="rent" name="rent" value= <?=$car['rent']?> readonly>
                 </div>
                 <div class="input-group">
                     <label for="days">Days:</label>
