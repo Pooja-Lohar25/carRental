@@ -1,7 +1,5 @@
 <?php 
 include('../navbar.php');
-$islogin = true;
-$isAgency = true;
 ?>
 
 <head>
