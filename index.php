@@ -1,5 +1,7 @@
 
 <?php 
+
+$cars = [];
 include('navbar.php');
 include('controllers/getcars.php');
 
@@ -36,8 +38,8 @@ include('controllers/getcars.php');
                 ?>
                 <div class="car-details">
                 <div class="details-grp" >
-                    <div>Agency name</div>
-                    <div style="font-size:12px"><p>Call: 9372578458<p></div>
+                    <div><?= $car['agencyname']?></div>
+                    <div style="font-size:12px"><p>Call: <?= $car['contact']?><p></div>
                 </div>
                 <div class="details-grp">
                     <div><?= $car['model'] ?></div>

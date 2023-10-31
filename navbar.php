@@ -1,12 +1,14 @@
 <?php
     error_reporting(E_ALL & ~E_NOTICE);
     session_start();
-    if(isset($_SESSION['islogin']))
-        $isLogin = $_SESSION['islogin'];
-    else $isLogin = false;
-    if(isset($_SESSION['isagency']))
-        $isAgency = $_SESSION['isagency'];
-    else $isAgency = false;
+    if(!isset($_SESSION['islogin']))
+        $_SESSION['islogin'] = false;
+
+    if(!isset($_SESSION['isagency']))
+        $_SESSION['isagency'] = false;
+
+    $isLogin = $_SESSION['islogin'];
+    $isAgency = $_SESSION['isagency'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
