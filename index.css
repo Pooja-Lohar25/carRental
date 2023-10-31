@@ -103,3 +103,24 @@ a{
     border-bottom: solid 3px #e4500c;
     padding-bottom:1px ;
 }
+
+.error div{
+    width: 50%;
+    text-align: center;
+    color:rgb(237, 39, 39);
+    margin-top: 20px;
+    font-size: 20px;
+}
+.message div{
+    width: 50%;
+    text-align: center;
+    color:green;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.message , .error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

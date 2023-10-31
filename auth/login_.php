@@ -17,13 +17,13 @@
             <form action="../controllers/authuser.php" method="post">
                 <div class="input-group">
                     <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" required>
+                    <input type="text" id="email" name="mail" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button class ="lg-btn"type="submit">Login</button>
+                <button class ="lg-btn" type="submit">Login</button>
             </form>
             <p> New User? <a href="#" onclick="displaypopup()">Signup</a></p>
         </div>

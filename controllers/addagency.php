@@ -1,6 +1,5 @@
 <?php
 include('dbconnect.php');
-
 $name = $_POST['username'];
 $contact = $_POST['contact'];
 $email = $_POST['mail'];
