@@ -2,6 +2,15 @@
 include('dbconnect.php');
 
 
+if(!isset($_SESSION['islogin']))
+$_SESSION['islogin'] = false;
+
+if(!isset($_SESSION['isagency']))
+$_SESSION['isagency'] = false;
+
+$isLogin = $_SESSION['islogin'];
+$isAgency = $_SESSION['isagency'];
+
 if($conn){
 
     if($_SESSION['isagency']){
