@@ -1,5 +1,7 @@
 <?php
 include('dbconnect.php');
+session_start();
+
 
 $email = $_POST['mail'];
 $pass = $_POST['password'];
@@ -9,7 +11,7 @@ $hashpass = password_hash($pass,PASSWORD_DEFAULT);
 if($conn)
 {
     //check user as agency
-    $checkagency = "SELECT `email`,`password` FROM `agency` WHERE `email`='$email' ";
+    $checkagency = "SELECT `email`,`password`,`agencyid` FROM `agency` WHERE `email`='$email' ";
     $res = mysqli_query($conn,$checkagency);
     if(mysqli_num_rows($res)>0)
     {
@@ -19,6 +21,7 @@ if($conn)
 
         $_SESSION['islogin'] = true;
         $_SESSION['isagency']  = true; 
+        $_SESSION['agencyid'] = $row['agencyid'];
         header("location: ../index.php");
         exit();
       }
@@ -34,6 +37,7 @@ if($conn)
       if($verify){
         $_SESSION['islogin'] = true;
         $_SESSION['isagency']  = false; 
+        $_SESSION['custid'] = $row['custid'];
         header("location: ../index.php");
         exit();
       }
