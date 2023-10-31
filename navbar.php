@@ -1,5 +1,6 @@
 <?php
-    $isLogin=true
+    $isLogin = false;
+    $isAgency = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,9 +13,12 @@
     <nav class="navbar">
         <ul class="navbar-list">
             <li class="navbar-item"><a href="/carRental/index.php">Home</a></li>
-            <li class="navbar-item"><a href="/carRental/cars/cars.php">Cars</a></li>
-            <?php if ($isLogin): ?>
+            <?php if ($isLogin && $isAgency): ?>
                 <li class="navbar-item"><a href="/carRental/cars/add-car.php">Add</a></li>
+            <?php elseif($isLogin && !$isAgency): ?>
+                <li class="navbar-item"><a href="/carRental/cars/cars.php">My Cars</a></li>
+            <?php else: ?>
+                <li class="navbar-item nav-btn"><a href="/carRental/auth/login_.php">Login/Signup</a></li>
             <?php endif; ?>
 
         </ul>

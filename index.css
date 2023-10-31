@@ -98,3 +98,8 @@ a{
 .btn-grp:hover{
     background-color: #f66b2b;
 }
+
+.nav-btn{
+    border-bottom: solid 3px #e4500c;
+    padding-bottom:1px ;
+}
