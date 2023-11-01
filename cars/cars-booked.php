@@ -7,7 +7,7 @@ while ($row = mysqli_fetch_assoc($cars)) {
 }
 $bookedcars = [];
 $bookedcars = array_filter($allcars, function ($car) {
-    return $car['custid'] != null and ($car['custid'] = $_SESSION['custid'] or $car['agencyid'] = $_SESSION['agencyid']);
+    return $car['custid'] !== null;
 });
 if(count($bookedcars) == 0) {
     $_SESSION['msg'] = "No cars booked";
@@ -48,7 +48,7 @@ include('../navbar.php');
                     <div class="details-grp">
                         <?php if ($isAgency): ?>
                             <label for="booked">Booked by:</label>
-                            <div><?= $car['booked_by'] ?></div>
+                            <div><?= $car['custid'] ?></div>
                         <?php else: ?>
                             <label for="booked">Booked from:</label>
                             <div><?= $car['agencyname'] ?></div>

@@ -2,6 +2,15 @@
 include('dbconnect.php');
 
 
+if(!isset($_SESSION['islogin']))
+$_SESSION['islogin'] = false;
+
+if(!isset($_SESSION['isagency']))
+$_SESSION['isagency'] = false;
+
+$isLogin = $_SESSION['islogin'];
+$isAgency = $_SESSION['isagency'];
+
 if($conn){
 
     if($_SESSION['isagency']){
@@ -15,10 +24,7 @@ if($conn){
     }
     
     if(!$_SESSION['islogin'] || !$_SESSION['isagency']){
-        $query = "SELECT cars.*, agency.name AS agencyname, agency.contact, customer.name AS booked_by
-        FROM cars
-        JOIN agency ON cars.agencyid = agency.agencyid
-        left JOIN customer ON cars.custid = customer.custId;";
+        $query = "SELECT cars.*, agency.name as agencyname, contact FROM cars JOIN agency ON cars.agencyid = agency.agencyid";
         $cars = mysqli_query($conn,$query);
         if(mysqli_num_rows($cars)==0){
             $_SESSION['msg'] = "No cars added";
