@@ -15,7 +15,6 @@ if($conn){
 
     if($_SESSION['isagency']){
         $agencyid = $_SESSION['agencyid'];
-        // $query = "SELECT cars.*, agency.name as agencyname, contact FROM cars JOIN agency ON cars.agencyid = agency.agencyid where cars.agencyid = '$agencyid'";
         $query = "SELECT c.*, a.name as agencyname, cu.name as custname, cu.contact as contact
         FROM cars AS c
         LEFT JOIN agency AS a ON c.agencyid = a.agencyid
