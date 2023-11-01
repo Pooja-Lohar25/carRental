@@ -6,13 +6,30 @@ $allcars = [];
 while ($row = mysqli_fetch_assoc($cars)) {
     $allcars[] = $row;
 }
+
+//filter cars for agency
 $bookedcars = [];
-$bookedcars = array_filter($allcars, function ($car) {
-    return $car['custid'] !== null;
-});
-if(count($bookedcars) == 0) {
-    $_SESSION['msg'] = "No cars booked";
-} 
+if($isAgency){
+
+    $bookedcars = array_filter($allcars, function ($car) {
+        return  $car['custid'] !== null ;
+    });
+    if(count($bookedcars) == 0) {
+        $_SESSION['msg'] = "No cars booked";
+    } 
+}
+//filter cars for customers
+if(!$isAgency){
+
+    $bookedcars = array_filter($allcars, function ($car) {
+        return  $car['custid'] == $_SESSION['custid'] ;
+    });
+    if(count($bookedcars) == 0) {
+        $_SESSION['msg'] = "No cars booked";
+    } 
+}
+
+
 ?>
 
 <head>
@@ -20,7 +37,7 @@ if(count($bookedcars) == 0) {
     <link rel="stylesheet" href="cars.css">
 </head>
 <body>
-    <!-- display user's and agency's booked car -->
+    <!-- display customer's and agency's booked car -->
     <div class="booked-cars">
         <div class="cars-container">
             <?php
@@ -48,7 +65,7 @@ if(count($bookedcars) == 0) {
                     <div class="details-grp">
                         <?php if ($isAgency): ?>
                             <label for="booked">Booked by:</label>
-                            <div><?= $car['custid'] ?></div>
+                            <div><?= $car['custname'] ?></div>
                         <?php else: ?>
                             <label for="booked">Booked from:</label>
                             <div><?= $car['agencyname'] ?></div>
