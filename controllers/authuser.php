@@ -11,7 +11,7 @@ $hashpass = password_hash($pass,PASSWORD_DEFAULT);
 if($conn)
 {
     //check user as agency
-    $checkagency = "SELECT `email`,`password`,`agencyid` FROM `agency` WHERE `email`='$email' ";
+    $checkagency = "SELECT * FROM `agency` WHERE `email`='$email' ";
     $res = mysqli_query($conn,$checkagency);
     if(mysqli_num_rows($res)>0)
     {
@@ -22,6 +22,7 @@ if($conn)
         $_SESSION['islogin'] = true;
         $_SESSION['isagency']  = true; 
         $_SESSION['agencyid'] = $row['agencyid'];
+        $_SESSION['agencyname'] = $row['name'];
         header("location: ../index.php");
         exit();
       }
@@ -38,6 +39,7 @@ if($conn)
         $_SESSION['islogin'] = true;
         $_SESSION['isagency']  = false; 
         $_SESSION['custid'] = $row['custId'];
+        $_SESSION['custname'] = $row['name'];
         header("location: ../index.php");
         exit();
       }

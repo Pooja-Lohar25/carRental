@@ -4,6 +4,19 @@
 $cars = [];
 include('navbar.php');
 include('controllers/getcars.php');
+
+//get all cars
+$allcars = [];
+while($row = mysqli_fetch_assoc($cars)){
+    $allcars[] = $row;
+}
+
+//filter available cars
+$cars  = array_filter($allcars,function ($car){
+    return $car['custid'] == NULL;
+})
+
+
 ?>
 
 <head>
