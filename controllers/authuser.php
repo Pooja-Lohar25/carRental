@@ -28,7 +28,7 @@ if($conn)
     }
 
     //check user as customer
-    $checkcust = "SELECT `email`,`password` FROM `customer` WHERE `email`='$email' ";
+    $checkcust = "SELECT * FROM `customer` WHERE `email`='$email' ";
     $res = mysqli_query($conn,$checkcust);
     if(mysqli_num_rows($res)>0)
     {
@@ -37,7 +37,7 @@ if($conn)
       if($verify){
         $_SESSION['islogin'] = true;
         $_SESSION['isagency']  = false; 
-        $_SESSION['custid'] = $row['custid'];
+        $_SESSION['custid'] = $row['custId'];
         header("location: ../index.php");
         exit();
       }
