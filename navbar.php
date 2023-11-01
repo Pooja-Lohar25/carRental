@@ -25,9 +25,11 @@
             <?php if ($isLogin && $isAgency): ?>
                 <li class="navbar-item"><a href="/carRental/cars/add-car.php">Add</a></li>
                 <li class="navbar-item"><a href="/carRental/cars/cars-booked.php">Booked Cars</a></li>
+                <li class="navbar-item"><button class="me-btn" onclick="displayagency()"><a href="#">Me</a></button></li>
                 <li class="navbar-item "><a href="/carRental/controllers/logout.php">Logout</a></li>
             <?php elseif($isLogin && !$isAgency): ?>
                 <li class="navbar-item"><a href="/carRental/cars/cars-booked.php">My Cars</a></li>
+                <li class="navbar-item"><button class="me-btn" onclick="displaycust()"><a href="#">Me</a></button></li>
                 <li class="navbar-item "><a href="/carRental/controllers/logout.php">Logout</a></li>
             <?php else: ?>
                 <li class="navbar-item nav-btn"><a href="/carRental/auth/login_.php">Login/Signup</a></li>
@@ -55,6 +57,14 @@
             ?>
             </div>
     </div>
+    <script>
+        function displayagency(){
+            alert("<?= $_SESSION['agencyname']?>");
+        }
+        function displaycust(){
+            alert("<?= $_SESSION['custname']?>");
+        }
+    </script>
 </body>
 </html>
 
