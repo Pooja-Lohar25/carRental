@@ -1,15 +1,20 @@
 <?php
-    error_reporting(E_ALL & ~E_NOTICE);
-    session_start();
+
+    if(session_status() == PHP_SESSION_NONE) 
+        session_start();
+
     if(!isset($_SESSION['islogin']))
         $_SESSION['islogin'] = false;
 
     if(!isset($_SESSION['isagency']))
         $_SESSION['isagency'] = false;
 
+
     $isLogin = $_SESSION['islogin'];
     $isAgency = $_SESSION['isagency'];
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
