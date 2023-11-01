@@ -59,10 +59,10 @@
     </div>
     <script>
         function displayagency(){
-            alert("<?= $_SESSION['agencyname']?>");
+            alert("Your username: <?= $_SESSION['agencyname']?>");
         }
         function displaycust(){
-            alert("<?= $_SESSION['custname']?>");
+            alert("Your username: <?= $_SESSION['custname']?>");
         }
     </script>
 </body>
