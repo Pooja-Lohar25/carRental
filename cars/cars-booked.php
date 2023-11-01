@@ -65,7 +65,7 @@ if(!$isAgency){
                     <div class="details-grp">
                         <?php if ($isAgency): ?>
                             <label for="booked">Booked by:</label>
-                            <div><?= $car['custid'] ?></div>
+                            <div><?= $car['custname'] ?></div>
                         <?php else: ?>
                             <label for="booked">Booked from:</label>
                             <div><?= $car['agencyname'] ?></div>
