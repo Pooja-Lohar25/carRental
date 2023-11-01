@@ -1,4 +1,5 @@
 <?php
+include('../navbar.php');
 include('../controllers/getcars.php');
 
 $allcars = [];
@@ -12,7 +13,6 @@ $bookedcars = array_filter($allcars, function ($car) {
 if(count($bookedcars) == 0) {
     $_SESSION['msg'] = "No cars booked";
 } 
-include('../navbar.php');
 ?>
 
 <head>

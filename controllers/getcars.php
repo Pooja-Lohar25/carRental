@@ -19,6 +19,7 @@ if($conn){
         $cars = mysqli_query($conn,$query);
         if(mysqli_num_rows($cars)==0){
             $_SESSION['msg'] = "No cars added";
+            $cars = [];
             exit();
         }
     }
@@ -28,6 +29,7 @@ if($conn){
         $cars = mysqli_query($conn,$query);
         if(mysqli_num_rows($cars)==0){
             $_SESSION['msg'] = "No cars added";
+            $cars = [];
             exit();
         }
     }

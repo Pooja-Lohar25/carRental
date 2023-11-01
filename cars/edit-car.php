@@ -1,6 +1,7 @@
 
 <?php 
 $cars = [];
+include('../navbar.php');
 include('../controllers/getcars.php');
 
 $allcars = [];
@@ -16,7 +17,6 @@ $car = array_filter($allcars, function ($car) use ($vehicleNumber) {
 $car = reset($car); //pointer reaches to first elem
 
 
-include('../navbar.php');
 ?>
 
 <head>

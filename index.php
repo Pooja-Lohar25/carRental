@@ -2,8 +2,8 @@
 <?php 
 
 $cars = [];
-include('controllers/getcars.php');
 include('navbar.php');
+include('controllers/getcars.php');
 ?>
 
 <head>
